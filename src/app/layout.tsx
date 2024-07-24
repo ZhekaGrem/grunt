@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Amatic_SC, Playfair_Display, Dancing_Script } from 'next/font/google';
 import "./globals.css";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Providers from './providers';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Amatic_SC({ subsets: ['hebrew', 'cyrillic', 'latin'], weight: ['700'] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className}  bg-gray-50 dark:bg-black`}>
+        <Providers>
+
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }
