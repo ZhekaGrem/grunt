@@ -8,8 +8,8 @@ const RecipeDetails = ({ recipe }: { recipe: RecipeType }) => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-[#A3DFC8] dark:bg-[#5C2018] p-8">
-      <div className="max-w-4xl mx-auto bg-[#43B9C6] dark:bg-[#BC4639] shadow-xl rounded-lg overflow-hidden">
+    <div className="min-h-screen  p-8">
+      <div className="max-w-4xl mx-auto shadow-xl rounded-lg overflow-hidden">
         <div className="p-8">
           {recipe.content.img && (
             <div className="flex justify-center mb-8">

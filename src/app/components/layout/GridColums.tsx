@@ -12,6 +12,7 @@ type GridColumnsProps = {
 const GridColums: React.FC<GridColumnsProps> = ({ recipedata }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
+  const [imgSrc, setImgSrc] = useState(`/2.webp`);
 
   // Обчислюємо індекси для поточної сторінки
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -26,18 +27,22 @@ const GridColums: React.FC<GridColumnsProps> = ({ recipedata }) => {
       <div className="flex flex-col w-full">
         <div className="grid md:grid-cols-3  w-full gap-5 p-7 justify-items-center ">
           {currentItems.map((item, index) => (
-            <div key={item.id || index}>
-              <h4 className=" bg-black  text-white dark:bg-white bg-opacity-30 dark:bg-opacity-60 absolute text-3xl dark:text-zinc-950   mt-4 ml-10 rounded-2xl  overflow-hidden  whitespace-nowrap max-w-[70%] md:max-w-[20%] ">
+            <div className="" key={item.id || index}>
+              <h4 className=" bg-white  text-zinc-950 dark:bg-black bg-opacity-30 dark:bg-opacity-60 absolute text-3xl dark:text-white   mt-4 ml-10   overflow-hidden  whitespace-nowrap max-w-[70%] md:max-w-[20%] ">
                 {item.name}
               </h4>
               <Link href={`/recipes/${item.id}`}>
                 <div className="">
                   <Image
-                    className="h-auto max-w-full rounded-xl shadow-md hover:shadow-lg hover:dark:shadow-zinc-50 dark:shadow-zinc-50"
-                    src="/2.webp"
+                    className="rounded-full border-double border-4 border-black dark:border-yellow-500 h-auto max-w-full  
+                    hover:shadow-md hover:shadow-black hover:dark:shadow-yellow-500 "
+                    src={imgSrc}
                     width={500}
                     height={500}
                     alt={item.name}
+                    onError={() => {
+                      setImgSrc('/2.webp');
+                    }}
                   />
                 </div>
               </Link>
@@ -94,7 +99,7 @@ const Pagination: React.FC<PaginationProps> = ({ itemsPerPage, totalItems, pagin
           <button
             onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-3 py-1 border rounded disabled:opacity-50 bg-gray-500 dark:bg-inherit">
+            className="hidden sm:block px-3 py-1 border rounded disabled:opacity-50 bg-gray-500 dark:bg-inherit">
             Попередня
           </button>
         </li>
@@ -126,9 +131,7 @@ const Pagination: React.FC<PaginationProps> = ({ itemsPerPage, totalItems, pagin
         {endPage < pageNumbers.length && (
           <>
             {endPage < pageNumbers.length - 1 && (
-              <li className=" rounded-3xl px-2 bg-gray-500  dark:bg-white dark:text-black">
-                ...
-              </li>
+              <li className=" rounded-3xl px-2 bg-gray-500  dark:bg-white dark:text-black">...</li>
             )}
             <li>
               <button
@@ -143,7 +146,7 @@ const Pagination: React.FC<PaginationProps> = ({ itemsPerPage, totalItems, pagin
           <button
             onClick={() => paginate(currentPage + 1)}
             disabled={currentPage === pageNumbers.length}
-            className="px-3 py-1 border rounded disabled:opacity-50 bg-gray-500 dark:bg-inherit">
+            className="hidden sm:block px-3 py-1 border rounded disabled:opacity-50 bg-gray-500 dark:bg-inherit">
             Наступна
           </button>
         </li>

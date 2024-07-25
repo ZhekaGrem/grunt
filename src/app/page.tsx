@@ -8,7 +8,7 @@ const recipedata: RecipeType[] = data;
 const Home = () => {
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 ">
+      <div className="flex ">
         {/* <SideBar /> */}
 
         <GridColums recipedata={recipedata} />

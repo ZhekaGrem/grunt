@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Amatic_SC, Playfair_Display, Dancing_Script } from 'next/font/google';
+import { Amatic_SC,PT_Serif} from 'next/font/google';
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Providers from './providers';
 
-const inter = Amatic_SC({ subsets: ['hebrew', 'cyrillic', 'latin'], weight: ['700'] });
+const inter = PT_Serif({ subsets: [ 'cyrillic', 'latin'], weight: ['400'] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,12 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}  bg-gray-50 dark:bg-black`}>
+      <body className={`${inter.className}  bg-h_bg dark:bg-d_bg`}>
         <Providers>
-
-        <Header />
-        <main>{children}</main>
-        <Footer />
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
