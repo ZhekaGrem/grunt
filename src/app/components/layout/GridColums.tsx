@@ -2,35 +2,12 @@
 import {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { RecipeType } from '@/type/index';
 
-type Recipe = {
-  id: number;
-  name: string;
-  info: {
-    type: string;
-    severity?: number;
-    base: string;
-    vegan: boolean;
-    vegetarian: boolean;
-    tested: boolean;
-    rating: {
-      like: number;
-      dislike: number;
-    };
-  };
-  content: {
-    img?: string;
-    data: {
-      portion?: string;
-      ingredients: string[];
-      recipe: string;
-    };
-  };
+
+type GridColumnsProps = {
+  recipedata: RecipeType[];
 };
-
-type GridColumnsProps= {
-  recipedata: Recipe[];
-}
 
 const GridColums: React.FC<GridColumnsProps> = ({ recipedata }) => {
   const [currentPage, setCurrentPage] = useState(1);

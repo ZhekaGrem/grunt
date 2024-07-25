@@ -1,33 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { RecipeType } from '@/type/index';
 
 
-type Recipe = {
-  id: number;
-  name: string;
-  info: {
-    type: string;
-    severity?: number;
-    base: string;
-    vegan: boolean;
-    vegetarian: boolean;
-    tested: boolean;
-    rating: {
-      like: number;
-      dislike: number;
-    };
-  };
-  content: {
-    img?: string;
-    data: {
-      portion?: string;
-      ingredients: string[];
-      recipe: string;
-    };
-  };
-};
 
-const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
+const RecipeDetails = ({ recipe }: { recipe: RecipeType }) => {
   const router = useRouter();
 
   return (
