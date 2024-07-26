@@ -2,7 +2,6 @@ import data from '@/db/recipes_ua_1.json';
 import RecipeDetails from './RecipeDetails';
 import { RecipeType } from '@/type/index';
 
-
 const recipedata: RecipeType[] = data;
 
 export async function generateStaticParams() {

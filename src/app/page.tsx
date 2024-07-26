@@ -8,7 +8,7 @@ const recipedata: RecipeType[] = data;
 const Home = () => {
   return (
     <>
-      <div className="flex ">
+      <div className="flex">
         {/* <SideBar /> */}
 
         <GridColums recipedata={recipedata} />

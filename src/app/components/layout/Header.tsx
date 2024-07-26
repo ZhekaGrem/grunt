@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <>
       <header>
-        <nav className="light:bg-white   border-double border-b-4 border-black dark:border-yellow-600">
-          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
+        <nav className="light:bg-white border-b-4 border-double border-black bg-white dark:border-yellow-600 dark:bg-gray-800">
+          <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
             <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
               <Image src="/logo.png" width={80} height={100} className="" alt=" Logo" />
             </Link>
@@ -17,12 +17,12 @@ const Header = () => {
               <button
                 data-collapse-toggle="navbar-search"
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
                 aria-controls="navbar-search"
                 aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
                 <svg
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -39,12 +39,12 @@ const Header = () => {
               <ThemeSwitcher />
             </div>
             <div
-              className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+              className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
               id="navbar-search">
               <div className="relative mt-3 md:hidden">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <svg
-                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    className="h-4 w-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -61,15 +61,15 @@ const Header = () => {
                 <input
                   type="text"
                   id="search-navbar"
-                  className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-10 text-sm text-gray-900 focus:border-red-500 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-red-500 dark:focus:ring-red-500"
                   placeholder="Search..."
                 />
               </div>
-              <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0    dark:border-gray-700 ">
+              <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 font-medium dark:border-gray-700 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse">
                 <li key={1}>
                   <Link
                     href="/"
-                    className="text-3xl hover:text-red-500 text-gray-900 block py-2 px-3 dark:text-white  rounded md:bg-transparent  md:p-0 "
+                    className="block rounded px-3 py-2 text-3xl text-gray-900 hover:text-red-500 dark:text-white dark:hover:text-red-500 md:bg-transparent md:p-0"
                     aria-current="page">
                     РЕЦЕПТИ
                   </Link>
