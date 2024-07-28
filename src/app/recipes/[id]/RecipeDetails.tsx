@@ -7,7 +7,7 @@ const merri = Merriweather({ subsets: ['cyrillic', 'latin'], weight: ['400'] });
 
 const RecipeDetails = ({ recipe }: { recipe: RecipeType }) => {
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen break-words p-8">
       <div className="mx-auto max-w-4xl rounded-lg shadow-xl">
         <div className="border-8 border-double border-black bg-h_bg p-8 text-h_te dark:border-yellow-600 dark:bg-slate-700 dark:text-d_te">
           {recipe.content.img && (
