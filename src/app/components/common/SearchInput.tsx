@@ -80,7 +80,7 @@ const SearchInput = () => {
         placeholder="Пошук..."
       />
       {isOpen && searchResults.length > 0 && (
-        <div className="absolute right-1 z-10 mt-1 max-h-80 w-full min-w-60 overflow-auto rounded-md bg-white text-black shadow-lg">
+        <div className="p absolute right-1 z-10 mt-1 max-h-80 w-full overflow-auto rounded-md bg-white text-black shadow-lg">
           <ul>
             {searchResults.map((item) => (
               <Link key={item.id} href={`/recipes/${item.id}`}>

@@ -1,12 +1,20 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import useRecipeStore from '@/state/useRecipeStore';
 
 import type { RecipeProps } from '@/type/index';
 
 const SideBar: React.FC<RecipeProps> = ({ recipedata }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { selectedType, setSelectedType, applyFilter } = useRecipeStore();
+  const types = ['', ...Array.from(new Set(recipedata.map((recipe) => recipe.info.type)))];
+
+  const handleChange = (type: string) => {
+    setSelectedType(type);
+    applyFilter(recipedata);
+  };
 
   return (
     <>
@@ -32,7 +40,19 @@ const SideBar: React.FC<RecipeProps> = ({ recipedata }) => {
         className={`fixed left-0 top-0 z-40 h-screen w-64 transition-transform md:static md:top-20 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} `}
         aria-label="Sidebar">
         <div className="h-full overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <ul className="space-y-2 font-medium"></ul>
+          <div className="flex flex-wrap gap-2 p-4">
+            {types.map((type) => (
+              <label key={type} className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={selectedType === type}
+                  onChange={() => handleChange(type)}
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <span>{type === '' ? 'Всі' : type}</span>
+              </label>
+            ))}
+          </div>
         </div>
       </aside>
     </>

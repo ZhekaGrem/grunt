@@ -30,6 +30,9 @@ export type PropsMetadataType = {
 export type RecipeProps = {
   recipedata: RecipeType[];
 };
+export type IconProps = {
+  className?: string;
+};
 export type PaginationProps = {
   itemsPerPage: number;
   totalItems: number;
@@ -37,12 +40,17 @@ export type PaginationProps = {
   currentPage: number;
 };
 
-export type RecipeStore = {
+export type RecipeStoreType = {
   currentPage: number;
   itemsPerPage: number;
   imgSrc: string;
-  checkboxStates: { [key: number]: boolean };
+  checkboxStates: { [key: string]: boolean };
+  selectedType: string;
+  filteredRecipes: RecipeType[];
   setCurrentPage: (page: number) => void;
   setImgSrc: (src: string) => void;
-  toggleCheckbox: (id: number) => void;
+  toggleCheckbox: (id: string) => void;
+  setSelectedType: (type: string) => void;
+  setFilteredRecipes: (recipes: RecipeType[]) => void;
+  applyFilter: (allRecipes: RecipeType[]) => void;
 };
