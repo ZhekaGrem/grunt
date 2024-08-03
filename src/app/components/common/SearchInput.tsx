@@ -53,7 +53,7 @@ const SearchInput = () => {
   };
 
   return (
-    <div className="relative" ref={wrapperRef}>
+    <div className="relative max-w-40" ref={wrapperRef}>
       <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
         <svg
           className="h-4 w-4 text-gray-500 dark:text-gray-400"

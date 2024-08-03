@@ -3,7 +3,7 @@ export type RecipeType = {
   name: string;
   info: {
     type: string;
-    severity?: number;
+    severity: number;
     base: string;
     vegan: boolean;
     vegetarian: boolean;
@@ -14,11 +14,35 @@ export type RecipeType = {
     };
   };
   content: {
-    img?: string;
+    img: string;
     data: {
-      portion?: string;
+      portion: string;
       ingredients: string[];
       recipe: string;
     };
   };
+};
+
+export type PropsMetadataType = {
+  params: { id: string };
+};
+
+export type RecipeProps = {
+  recipedata: RecipeType[];
+};
+export type PaginationProps = {
+  itemsPerPage: number;
+  totalItems: number;
+  paginate: (pageNumber: number) => void;
+  currentPage: number;
+};
+
+export type RecipeStore = {
+  currentPage: number;
+  itemsPerPage: number;
+  imgSrc: string;
+  checkboxStates: { [key: number]: boolean };
+  setCurrentPage: (page: number) => void;
+  setImgSrc: (src: string) => void;
+  toggleCheckbox: (id: number) => void;
 };

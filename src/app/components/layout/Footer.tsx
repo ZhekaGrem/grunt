@@ -1,38 +1,22 @@
 import React from 'react';
 
 const Footer = () => {
+  const date = new Date().getFullYear();
   return (
     <footer className="m-4 rounded-lg border-2 border-solid border-black bg-white shadow dark:border-yellow-600 dark:bg-gray-800">
-      <div className="mx-auto w-full max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-          © 2023{' '}
-          <a href="https://flowbite.com/" className="hover:underline">
-            Flowbite™
+      <div className="text-text_2 container px-4 py-6 md:flex md:items-center md:justify-between">
+        <div className="text-center md:text-left">
+          <p>&copy; {date} Євгеній Грем. Усі права захищено.</p>
+        </div>
+        <div className="mt-4 flex justify-center md:mt-0">
+          <a
+            href="https://t.me/GremYevhenii"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="darck:hover:text-white transition-colors">
+            Зв`язатися з розробником
           </a>
-          . All Rights Reserved.
-        </span>
-        <ul className="mt-3 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          <li>
-            <a href="#" className="me-4 hover:underline md:me-6">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" className="me-4 hover:underline md:me-6">
-              Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a href="#" className="me-4 hover:underline md:me-6">
-              Licensing
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline">
-              Contact
-            </a>
-          </li>
-        </ul>
+        </div>
       </div>
     </footer>
   );

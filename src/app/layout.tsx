@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
-import { Open_Sans, Merriweather } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Providers from './providers';
+import Providers from '@/state/providers';
 
 const inter = Open_Sans({ subsets: ['cyrillic', 'latin'], weight: ['400'] });
 
 export const metadata: Metadata = {
-  title: 'Рецепти',
-  description: 'Хороші рецепти',
+  title: 'Рецепти провірені',
+  description: 'Найкращі рецепти які варто повторити',
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="uk" suppressHydrationWarning>
       <body className={`${inter.className} bg-h_bg dark:bg-d_bg`}>
         <Providers>
           <Header />
