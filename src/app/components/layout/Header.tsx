@@ -10,7 +10,14 @@ const Header = () => {
         <nav className="light:bg-white border-b-4 border-double border-black bg-white dark:border-yellow-600 dark:bg-gray-800">
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
             <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <Image src="/logo.png" width={80} height={100} className="max-w-14 sm:max-w-20" alt=" Logo" />
+              <Image
+                src="/logo.png"
+                width={80}
+                height={100}
+                priority={true}
+                className="h-auto w-auto max-w-14 sm:max-w-20"
+                alt=" Logo"
+              />
             </Link>
             <div className="flex md:order-2">
               <SearchInput />

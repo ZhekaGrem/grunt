@@ -19,9 +19,8 @@ const SearchInput = () => {
         const results = recipedata.filter(
           (item) =>
             item.name.toLowerCase().includes(term.toLowerCase()) ||
-            item.content.data.ingredients.some((ingredient) =>
-              ingredient.toLowerCase().includes(term.toLowerCase())
-            )
+            item.info.base.toLowerCase().includes(term.toLowerCase()) ||
+            item.info.type.toLowerCase().includes(term.toLowerCase())
         );
         setSearchResults(results);
         setIsOpen(true);

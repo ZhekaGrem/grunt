@@ -5,7 +5,6 @@ export type RecipeType = {
     type: string;
     severity: number;
     base: string;
-    vegan: boolean;
     vegetarian: boolean;
     tested: boolean;
     rating: {
@@ -33,6 +32,7 @@ export type RecipeProps = {
 export type IconProps = {
   className?: string;
 };
+
 export type PaginationProps = {
   itemsPerPage: number;
   totalItems: number;

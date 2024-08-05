@@ -28,7 +28,7 @@ const RecipeDetails = ({ recipe }: { recipe: RecipeType }) => {
                 <h3 className="mb-4 text-3xl font-semibold">Інгредієнти:</h3>
                 <ul className="list-inside list-disc text-2xl">
                   {recipe.content.data.ingredients.map((ingredient, index) => (
-                    <li key={index} className="mb-2">
+                    <li key={index} className="capitalize-first mb-2">
                       {ingredient}
                     </li>
                   ))}

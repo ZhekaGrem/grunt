@@ -8,6 +8,7 @@ import Loading from '@/app/loading';
 import SideBar from '@/app/components/layout/SideBar';
 import StarIcon from '@/app/components/common/StarIcon';
 import useRecipeStore from '@/state/useRecipeStore';
+import { tree } from 'next/dist/build/templates/app-page';
 
 const GridColums: React.FC<RecipeProps> = ({ recipedata }) => {
   const { currentPage, itemsPerPage, imgSrc, setCurrentPage, setImgSrc, filteredRecipes, applyFilter } =
@@ -38,6 +39,7 @@ const GridColums: React.FC<RecipeProps> = ({ recipedata }) => {
                       width={300}
                       height={100}
                       alt={item.name}
+                      priority={true}
                       onError={() => setImgSrc('/2.webp')}
                     />
                   </div>

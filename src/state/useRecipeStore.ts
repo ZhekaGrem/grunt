@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 import type { RecipeStoreType, RecipeType } from '@/type/index';
 
 const useRecipeStore = create<RecipeStoreType>((set, get) => ({

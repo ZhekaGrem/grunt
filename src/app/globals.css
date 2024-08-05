@@ -82,3 +82,7 @@ p {
     text-wrap: balance;
   }
 }
+
+.capitalize-first::first-letter {
+  text-transform: uppercase;
+}
